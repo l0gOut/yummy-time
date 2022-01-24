@@ -1,5 +1,6 @@
 <template>
   <div class="q-pa-md row justify-center q-gutter-md">
+    <!-- Последние важные новости компании (возможно будет вырезано) -->
     <q-card
       class="col-3"
       v-for="post in posts"

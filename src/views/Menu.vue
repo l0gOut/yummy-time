@@ -1,5 +1,6 @@
 <template>
   <div class="q-py-md row justify-center q-gutter-md">
+    <!-- Создание карточек категорий -->
     <q-card
       class="categor-select"
       style="height: 300px; min-width: 200px; width: 400px"
@@ -15,10 +16,11 @@
 </template>
 
 <script>
+// Имитация базы ьез бэкенда(не задонатили на сервак)
 import miniRolls from "../assets/miniRolls/gaspe.jpg";
 import hotEat from "../assets/hotEat/hot-eat-1.jpg";
 import bundle from "../assets/bundle/Mm6FMjtnB0A.jpg";
-import burger from "../assets/burgers/wrKpMQFHFRs.jpg";
+import burger from "../assets/burgers/usb.jpg";
 import meatless from "../assets/meatless/x0TylLUD06w.jpg";
 import rolls from "../assets/rolls/A3RgG3NtiA8.jpg";
 import drinkAndDeserts from "../assets/drinkAndDeserts/aSI1n5y3AdA.jpg";
@@ -34,6 +36,7 @@ import pizza from "../assets/pizza/hPTlhQusa80.jpg";
 export default {
   data() {
     return {
+      // Костыль без использования БД
       categories: [
         { id: 1, image: hotEat, title: "Горячие блюда", path: "hot-eat" },
         { id: 2, image: miniRolls, title: "Мини роллы", path: "mini-rolls" },
@@ -69,9 +72,7 @@ export default {
     };
   },
   methods: {
-    onResize({ width }) {
-      console.log(width);
-    },
+    // При нажатии на карточку перекидывает на вкладку с её содержимым
     routerPush(path) {
       this.$router.push({ path: `/menu/${path}` });
     },

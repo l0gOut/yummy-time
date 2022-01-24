@@ -3,6 +3,7 @@
     style="min-height: 400px; min-width: 200px; width: 400px"
     class="column justify-baseline"
   >
+    <!-- Адаптация под телефоны -->
     <q-resize-observer @resize="onResize"></q-resize-observer>
     <q-img :src="image" style="height: 60%">
       <div class="absolute-bottom text-h6">{{ title }}</div>
@@ -13,6 +14,7 @@
         description
       }}</q-scroll-area>
     </q-card-section>
+    <!-- Если есть переменная 'price' то появляется данный блок -->
     <q-card-section
       class="text-subtitle2 items-center justify-evenly relative-position no-wrap"
       :class="rowOrCol"
@@ -29,6 +31,7 @@
         >В корзину</q-btn
       >
     </q-card-section>
+    <!-- Если нет переменной 'price' то высвечивается данный блок -->
     <q-card-section
       class="text-subtitle2 column justify-center"
       style="height: 20%"
@@ -58,6 +61,7 @@ export default {
       if (width >= 400) this.rowOrCol = "row";
       else this.rowOrCol = "col ";
     },
+
     loadingSimulate() {
       this.loading = true;
       setTimeout(() => (this.loading = false), 5000);

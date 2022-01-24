@@ -5,9 +5,11 @@
     <div :class="headerSize + ' no-wrap'">
       <q-img
         src="./assets/YummyTimeLogo.jpg"
-        style="max-width: 200px"
+        style="max-width: 200px; cursor: pointer"
         fit="contain"
+        @click="() => this.$router.push('/')"
       />
+      <!-- Номера для связи с компанией -->
       <div class="column items-center justify-center">
         <a class="text-h4 q-my-sm text-no-wrap" href="tel:89302749598"
           >+7 (930) 274-95-98</a
@@ -25,7 +27,7 @@
         </h6>
       </div>
     </div>
-
+    <!-- Навигация по сайту с компьютера -->
     <q-tabs
       v-if="headerSize[0] === 'r'"
       class="bg-lime shadow-2"
@@ -35,6 +37,7 @@
       <q-route-tab to="/" class="text-h4" replace>Главная</q-route-tab>
       <q-route-tab to="/menu" class="text-h4" replace>Меню</q-route-tab>
     </q-tabs>
+    <!-- Бургер меню для мобильных устройств  -->
     <div v-else class="fixed-top-right" style="height: 100vh; z-index: 1">
       <input
         id="burger"
@@ -47,8 +50,10 @@
         <span></span>
         <span></span>
       </label>
+      <!-- Всплывающее меню при нажатии на иконку -->
       <div class="burger-navigation column items-center">
         <div style="width: 100%">
+          <!-- Навигация по главным страницам сайта -->
           <h4 class="text-center">Навигация</h4>
           <q-tabs vertical>
             <q-route-tab to="/" class="text-h6" replace>Главная</q-route-tab>
@@ -56,12 +61,17 @@
           </q-tabs>
         </div>
         <div style="width: 100%">
+          <!-- Навигация по категориям еды -->
           <h4 class="text-center">Меню</h4>
           <q-tabs vertical>
             <q-route-tab to="/menu/hot-eat" class="text-h6" replace
               >Горячие блюда</q-route-tab
-            ><q-route-tab to="/menu/mini-rolls" class="text-h6" replace
+            >
+            <q-route-tab to="/menu/mini-rolls" class="text-h6" replace
               >Мини роллы</q-route-tab
+            >
+            <q-route-tab to="/menu/burgers" class="text-h6" replace
+              >Бургеры</q-route-tab
             >
           </q-tabs>
         </div>
@@ -82,6 +92,7 @@ export default {
   },
 
   methods: {
+    // Блоки становятся по вертикали при изменении блока шапки, меньше 700 пикселей, иначе все становится в ряд
     onResize({ width }) {
       if (width <= 700) this.headerSize = "column items-center justify-evenly";
       else {

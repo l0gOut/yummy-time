@@ -1,5 +1,7 @@
 <template>
-  <div class="q-py-md row justify-center q-gutter-md">
+  <!-- Вложенность путей -->
+  <NavigationMenu class="q-py-lg" />
+  <div class="row justify-center q-gutter-md">
     <!-- Распечатывание плиток с меню категории -->
     <Card
       v-for="card in menu"
@@ -14,10 +16,13 @@
 
 <script>
 import Card from "../components/Card.vue";
+import NavigationMenu from "../components/NavigationMenu.vue";
+import { store } from "../store.js";
 
 export default {
+  store,
   name: "CategoryEats",
-  components: { Card },
+  components: { Card, NavigationMenu },
   data() {
     return {
       menu: [],
@@ -31,13 +36,47 @@ export default {
   },
   methods: {
     //   Определяет на какой вкладке находится, для динамического пути(НУ БЕЗ БАЗЫ ТОЛЬКО ТАК ЕБАШИТЬ, ВРУЧНУЮ)
+    //   Стор сделан для реактивного изменения навигационного меню (по другому не придумал)
     renderMenu() {
       switch (this.$route.params.category) {
         case "hot-eat":
+          store.setStore("Горячие блюда", [
+            {
+              path: "/menu",
+              title: "Меню",
+            },
+            {
+              path: "/menu/hot-eat",
+              title: "Горячие блюда",
+            },
+          ]);
           import("../database.js").then(data => (this.menu = data.hotEat));
           break;
         case "mini-rolls":
+          store.setStore("Мини роллы", [
+            {
+              path: "/menu",
+              title: "Меню",
+            },
+            {
+              path: "/menu/mini-rolls",
+              title: "Мини роллы",
+            },
+          ]);
           import("../database.js").then(data => (this.menu = data.miniRolls));
+          break;
+        case "burgers":
+          store.setStore("Бургеры", [
+            {
+              path: "/menu",
+              title: "Меню",
+            },
+            {
+              path: "/menu/mini-rolls",
+              title: "Бургеры",
+            },
+          ]);
+          import("../database.js").then(data => (this.menu = data.burger));
           break;
       }
     },

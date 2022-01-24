@@ -13,6 +13,14 @@ import Chicago from "./assets/miniRolls/chicago.jpg";
 import Crim from "./assets/miniRolls/crim.jpg";
 import Gaspe from "./assets/miniRolls/gaspe.jpg";
 
+import ChickenBurger from "./assets/burgers/chicken.jpg";
+import ChickenKids from "./assets/burgers/chickenKids.jpg";
+import ChickenLong from "./assets/burgers/chickenLong.jpg";
+import Double from "./assets/burgers/double.jpg";
+import FamousStar from "./assets/burgers/famousStar.jpg";
+import Kids from "./assets/burgers/kids.jpg";
+import Usb from "./assets/burgers/usb.jpg";
+
 export const hotEat = [
   {
     id: 1,
@@ -110,7 +118,67 @@ export const miniRolls = [
   },
 ];
 
+export const burger = [
+  {
+    id: 14,
+    image: Usb,
+    title: "Бургер USB",
+    description:
+      "Булочка,красный соус и сладкая горица,домашняя мясная котлетка из 100% говядины с луком и специями,сыр,хрустящий соленый огурчик,красный лук,ломтики бекона,листья салата",
+    price: 230,
+  },
+  {
+    id: 15,
+    image: Double,
+    title: "Дабл Бургер",
+    description:
+      "Булочка,красный соус и сладкая горчица, 2 домашние мясные котлетки из 100% говядины с луком и специями,листья салата,хрустящий соленый огурчик,томат",
+    price: 270,
+  },
+  {
+    id: 16,
+    image: Kids,
+    title: "Бургер детский",
+    description:
+      "Булочка,красный соус и сладкая горчица,домашняя мясная котлетка из 100% говядины,листья салата",
+    price: 160,
+  },
+  {
+    id: 17,
+    image: FamousStar,
+    title: "Бургер Фэймос Стар",
+    description:
+      "Булочка,красный соус и сладкая горчица,домашняя мясная котлетка из 100% говядины с луком и специями,сыр,хрустящий соленый огурчик,томат,листья салата",
+    price: 190,
+  },
+  {
+    id: 18,
+    image: ChickenLong,
+    title: "Чикен Бургер Лонг",
+    description:
+      "Булочка,соус 1000 островов, куриная котлетка в хрустящей панировке,сыр,соленый огурчик,томат,листья салата,кисло-сладкий соус",
+    price: 180,
+  },
+  {
+    id: 19,
+    image: ChickenBurger,
+    title: "Чикен Бургер",
+    description:
+      "Булочка,соус 1000 островов,куриная котлетка в хрустящей панировке,томат,листья салата",
+    price: 160,
+  },
+  {
+    id: 20,
+    image: ChickenKids,
+    title: "Чикен Детский",
+    description:
+      "Булочка,сырный соус,куриная котлетка в хрустящей панировке,листья салата,кисло-сладкий соус",
+    price: 150,
+  },
+];
+
 export default {
   hotEat,
   miniRolls,
+  burger,
 };
