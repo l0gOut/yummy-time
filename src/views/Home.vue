@@ -4,7 +4,7 @@
       class="col-3"
       v-for="post in posts"
       :key="post.id"
-      style="height: 400px; min-width: 200px"
+      style="height: 400px; min-width: 200px; width: 400px"
     >
       <q-img :src="post.img" style="height: 40%" />
       <q-card-section style="height: 60%">

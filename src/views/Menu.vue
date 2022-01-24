@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pa-md row justify-center q-gutter-md">
+  <div class="q-py-md row justify-center q-gutter-md">
     <q-card
       class="categor-select"
       style="height: 300px; min-width: 200px; width: 400px"
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import miniRolls from "../assets/miniRolls/skZUY0psRxA.jpg";
+import miniRolls from "../assets/miniRolls/gaspe.jpg";
 import hotEat from "../assets/hotEat/hot-eat-1.jpg";
 import bundle from "../assets/bundle/Mm6FMjtnB0A.jpg";
 import burger from "../assets/burgers/wrKpMQFHFRs.jpg";

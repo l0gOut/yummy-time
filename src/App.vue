@@ -1,5 +1,5 @@
 <template>
-  <div class="column q-mt-md no-wrap" style="width: 70%">
+  <div class="column q-mt-md no-wrap" style="width: 90%">
     <q-resize-observer @resize="onResize"></q-resize-observer>
 
     <div :class="headerSize + ' no-wrap'">
@@ -26,10 +26,48 @@
       </div>
     </div>
 
-    <q-tabs class="bg-lime shadow-2" style="min-height: 100px" align="justify">
+    <q-tabs
+      v-if="headerSize[0] === 'r'"
+      class="bg-lime shadow-2"
+      style="min-height: 100px"
+      align="justify"
+    >
       <q-route-tab to="/" class="text-h4" replace>Главная</q-route-tab>
       <q-route-tab to="/menu" class="text-h4" replace>Меню</q-route-tab>
     </q-tabs>
+    <div v-else class="fixed-top-right" style="height: 100vh; z-index: 1">
+      <input
+        id="burger"
+        :v-model="checkboxBurger"
+        class="hidden"
+        type="checkbox"
+      />
+      <label class="burger-icon" for="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <div class="burger-navigation column items-center">
+        <div style="width: 100%">
+          <h4 class="text-center">Навигация</h4>
+          <q-tabs vertical>
+            <q-route-tab to="/" class="text-h6" replace>Главная</q-route-tab>
+            <q-route-tab to="/menu" class="text-h6" replace>Меню</q-route-tab>
+          </q-tabs>
+        </div>
+        <div style="width: 100%">
+          <h4 class="text-center">Меню</h4>
+          <q-tabs vertical>
+            <q-route-tab to="/menu/hot-eat" class="text-h6" replace
+              >Горячие блюда</q-route-tab
+            ><q-route-tab to="/menu/mini-rolls" class="text-h6" replace
+              >Мини роллы</q-route-tab
+            >
+          </q-tabs>
+        </div>
+      </div>
+    </div>
+
     <router-view />
   </div>
 </template>
@@ -39,19 +77,92 @@ export default {
   data() {
     return {
       headerSize: "row items-center justify-evenly",
+      checkboxBurger: false,
     };
   },
 
   methods: {
     onResize({ width }) {
       if (width <= 700) this.headerSize = "column items-center justify-evenly";
-      else this.headerSize = "row items-center justify-evenly";
+      else {
+        this.headerSize = "row items-center justify-evenly";
+        this.checkboxBurger = false;
+      }
     },
   },
 };
 </script>
 
 <style lang="scss">
+.burger-icon {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  justify-content: space-between;
+
+  flex-direction: column;
+
+  > span {
+    background-color: green;
+    height: 4px;
+    border-radius: 25px;
+    transition: 200ms;
+  }
+
+  > span:nth-child(1) {
+    width: 50%;
+  }
+
+  > span:nth-child(2) {
+    width: 100%;
+  }
+
+  > span:nth-child(3) {
+    width: 75%;
+  }
+}
+
+.burger-navigation {
+  background-color: rgba($color: #000000, $alpha: 0.9);
+  width: 0;
+  float: right;
+  height: 100%;
+  transition: 200ms width;
+  padding: 80px 0 0 0;
+  color: white;
+
+  h4 {
+    border-width: 2px 0;
+    border-style: solid;
+    border-color: white;
+    margin: 0;
+  }
+}
+
+#burger:checked {
+  ~ label {
+    > span:nth-child(1) {
+      border-radius: 25px 0 0 25px;
+      transform: translate(3px, 13px) rotate(45deg);
+    }
+    > span:nth-child(2) {
+      transform: rotate(-45deg);
+    }
+    > span:nth-child(3) {
+      border-radius: 0 25px 25px 0;
+      width: 50%;
+      transform: translate(21px, -13px) rotate(45deg);
+    }
+  }
+
+  ~ .burger-navigation {
+    width: 120%;
+  }
+}
+
 a {
   &:link {
     color: green;
