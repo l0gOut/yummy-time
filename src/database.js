@@ -21,6 +21,27 @@ import FamousStar from "./assets/burgers/famousStar.jpg";
 import Kids from "./assets/burgers/kids.jpg";
 import Usb from "./assets/burgers/usb.jpg";
 
+import Juice1 from "./assets/drinkAndDeserts/juice-1.jpg";
+import Juice2 from "./assets/drinkAndDeserts/juice-2.jpg";
+import Gazir from "./assets/drinkAndDeserts/gazir.jpg";
+import Ant from "./assets/drinkAndDeserts/ant.jpg";
+import Cheescake from "./assets/drinkAndDeserts/cheescake.jpg";
+import MaffinCherryChocolate from "./assets/drinkAndDeserts/maffinCherryChocolate.jpg";
+import MaffinCherry from "./assets/drinkAndDeserts/maffinCherry.jpg";
+import RedFlower from "./assets/drinkAndDeserts/redFlower.jpg";
+import WhiteFlower from "./assets/drinkAndDeserts/whiteFlower.jpg";
+import BlackFlower from "./assets/drinkAndDeserts/blackFlower.jpg";
+
+import BoksPalamero from "./assets/bundle/bundlePalamero.jpg";
+import BoksMeksika from "./assets/bundle/bundleMeksik.jpg";
+import BoksVkys from "./assets/bundle/bundleVkys.jpg";
+import BoksSoblazn from "./assets/bundle/bundleSoblazn.jpg";
+import BoksPikante from "./assets/bundle/bundlePikante.jpg";
+import Boks1 from "./assets/bundle/boks-1.jpg";
+import Boks2 from "./assets/bundle/boks-2.jpg";
+import Boks3 from "./assets/bundle/boks-3.jpg";
+import Boks4 from "./assets/bundle/boks-4.jpg";
+
 export const hotEat = [
   {
     id: 1,
@@ -177,8 +198,157 @@ export const burger = [
   },
 ];
 
+export const drinkAndDeserts = [
+  {
+    id: 21,
+    image: Juice1,
+    title: "Сок J7",
+    description: "Сок J7 (в ассортименте) 0,2л",
+    price: 50,
+  },
+  {
+    id: 22,
+    image: Juice2,
+    title: "Сок J7",
+    description: "Сок J7 (в ассортименте) 0,97л",
+    price: 140,
+  },
+  {
+    id: 23,
+    image: Gazir,
+    title: "Газировка",
+    description: "Кока-кола,Фанта,Спрайт 1,0",
+    price: 100,
+  },
+  {
+    id: 24,
+    image: Ant,
+    title: "Муравейник",
+    description: "Муравейник",
+    price: 100,
+  },
+  {
+    id: 25,
+    image: Cheescake,
+    title: "Чизкейк",
+    description:
+      "Чизкейк (в ассортименте) (товар может отличаться от картинки)",
+    price: 150,
+  },
+  {
+    id: 26,
+    image: MaffinCherryChocolate,
+    title: "Маффин с черникой и шоколадом",
+    description:
+      "Нежные, вкусные, легкие маффины с ягодой черникой и шоколадом .С добавлением нашего вкусного мороженного .",
+    price: 170,
+  },
+  {
+    id: 27,
+    image: MaffinCherry,
+    title: "Маффин с черникой",
+    description: "Маффины с ягодой черникой и шоколадом.",
+    price: 100,
+  },
+  {
+    id: 28,
+    image: RedFlower,
+    title: "Красная орхидея",
+    description:
+      '"Красная орхидея" -сливочный -сыр+пудра -яблоко- банан -ягодный топпинг -блинчик -безе',
+    price: 250,
+  },
+  {
+    id: 29,
+    image: WhiteFlower,
+    title: "Белая Орхидея",
+    description:
+      '"Белая Орхидея" -сливочный -сыр+пудра -ананас -банан -ягодный топпинг -блинчик -безе',
+    price: 250,
+  },
+  {
+    id: 30,
+    image: BlackFlower,
+    title: "Чёрная Орхидея",
+    description:
+      '"Черная орхидея" -сливочный -сыр+пудра -ананас -яблоко -банан -ягодный топпинг -блинчик -безе',
+    price: 250,
+  },
+];
+
+export const bundle = [
+  {
+    id: 31,
+    image: BoksPalamero,
+    title: "Бокс Паламеро",
+    description: "",
+    price: 649,
+  },
+  {
+    id: 32,
+    image: BoksMeksika,
+    title: "Бокс Мексика",
+    description: "",
+    price: 789,
+  },
+  {
+    id: 33,
+    image: BoksVkys,
+    title: "Бокс Мир Вкуса",
+    description: "",
+    price: 729,
+  },
+  {
+    id: 34,
+    image: BoksSoblazn,
+    title: "Бокс Соблазн",
+    description: "",
+    price: 749,
+  },
+  {
+    id: 35,
+    image: BoksPikante,
+    title: "Бокс Пиканте",
+    description: "",
+    price: 879,
+  },
+  {
+    id: 36,
+    image: Boks1,
+    title: "Бокс 1",
+    description:
+      "Пицца Европейская 33 см Ролл горячий Чикен хот Ролл запечённый Феникс",
+    price: 850,
+  },
+  {
+    id: 37,
+    image: Boks2,
+    title: "Бокс 2",
+    description:
+      "Пицца Миланская 33 см Ролл горячий Грибной Ролл запечённый Майями",
+    price: 850,
+  },
+  {
+    id: 38,
+    image: Boks3,
+    title: "Бокс 3",
+    description: "Пицца ЧикеФрэш 33 см. Ролл Татами Салат- ролл с курицей",
+    price: 850,
+  },
+  {
+    id: 39,
+    image: Boks4,
+    title: "Бокс 4",
+    description:
+      "Пицца Властелин Морей 33см Ролл горячий Эльза Тортилья с копчёным лососем",
+    price: 850,
+  },
+];
+
 export default {
   hotEat,
   miniRolls,
   burger,
+  drinkAndDeserts,
+  bundle,
 };

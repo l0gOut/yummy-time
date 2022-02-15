@@ -23,7 +23,7 @@ import bundle from "../assets/bundle/Mm6FMjtnB0A.jpg";
 import burger from "../assets/burgers/usb.jpg";
 import meatless from "../assets/meatless/x0TylLUD06w.jpg";
 import rolls from "../assets/rolls/A3RgG3NtiA8.jpg";
-import drinkAndDeserts from "../assets/drinkAndDeserts/aSI1n5y3AdA.jpg";
+import drinkAndDeserts from "../assets/drinkAndDeserts/blackFlower.jpg";
 import assorti from "../assets/assorti/YAnJvF3Mr68.jpg";
 import hotBluds from "../assets/hotBluds/FOFvDBv6k0U.jpg";
 import rise from "../assets/rise/yrueavqICNs.jpg";

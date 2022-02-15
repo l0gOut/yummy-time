@@ -11,10 +11,10 @@
       />
       <!-- Номера для связи с компанией -->
       <div class="column items-center justify-center">
-        <a class="text-h4 q-my-sm text-no-wrap" href="tel:89302749598"
+        <a class="text-h4 q-my-sm text-no-wrap tel" href="tel:89302749598"
           >+7 (930) 274-95-98</a
         >
-        <a class="text-h4 q-my-sm text-no-wrap" href="tel:89302749599"
+        <a class="text-h4 q-my-sm text-no-wrap tel" href="tel:89302749599"
           >+7 (930) 274-95-99</a
         >
       </div>
@@ -38,7 +38,11 @@
       <q-route-tab to="/menu" class="text-h4" replace>Меню</q-route-tab>
     </q-tabs>
     <!-- Бургер меню для мобильных устройств  -->
-    <div v-else class="fixed-top-right" style="height: 100vh; z-index: 1">
+    <div
+      v-else
+      class="fixed-top-right burger-menu"
+      style="height: 100vh; z-index: 1"
+    >
       <input
         id="burger"
         :v-model="checkboxBurger"
@@ -72,6 +76,8 @@
             >
             <q-route-tab to="/menu/burgers" class="text-h6" replace
               >Бургеры</q-route-tab
+            ><q-route-tab to="/menu/drink-and-deserts" class="text-h6" replace
+              >Напитки и десерты</q-route-tab
             >
           </q-tabs>
         </div>
@@ -176,9 +182,28 @@ export default {
 
 a {
   &:link {
-    color: green;
+    color: black;
     text-decoration: none;
   }
   color: none;
+}
+
+.burger-menu {
+  a {
+    &:visited,
+    &:link {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+a.tel {
+  color: green;
+  transition: 200ms;
+
+  &:hover {
+    color: rgb(0, 150, 0);
+  }
 }
 </style>

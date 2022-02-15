@@ -76,8 +76,48 @@ export default {
               title: "Бургеры",
             },
           ]);
+
           import("../database.js").then(data => (this.menu = data.burger));
           break;
+        case "drink-and-deserts":
+          store.setStore("Напитки и десерты", [
+            {
+              path: "/menu",
+              title: "Меню",
+            },
+            {
+              path: "/menu/drink-and-deserts",
+              title: "Напитки и десерты",
+            },
+          ]);
+          import("../database.js").then(
+            data => (this.menu = data.drinkAndDeserts)
+          );
+          break;
+        case "super-box":
+          store.setStore("Супер боксы", [
+            {
+              path: "/menu",
+              title: "Меню",
+            },
+            {
+              path: "/menu/super-box",
+              title: "Супер боксы",
+            },
+          ]);
+          import("../database.js").then(data => (this.menu = data.bundle));
+          break;
+        default:
+          store.setStore("404", [
+            {
+              path: "/menu",
+              title: "Меню",
+            },
+            {
+              path: "/menu/404",
+              title: "404",
+            },
+          ]);
       }
     },
   },
